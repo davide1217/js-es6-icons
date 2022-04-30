@@ -1,0 +1,70 @@
+header {
+  height: 70px;
+  display: flex;
+  align-items: flex-end;
+}
+
+h1{
+  margin-bottom: 0;
+  font-family: 'Bangers', cursive;
+  color: #46B1DD
+}
+
+section {
+  height: 70px;
+  background-color: #46B1DD;
+  color: white;
+}
+
+section span{
+  font-size: 1.3rem;
+}
+
+section > select {
+width: auto;
+font-size: .8rem;
+background-color: white;
+}
+
+main {
+  background-color: #DDDDDD;
+  min-height: calc(100vh - 140px);
+}
+
+.row > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
+  box-shadow: 1.5px 1.5px 2px;
+  margin-right: 1px;
+  margin-bottom: 100px;
+  padding: 25px;
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+
+.row > div i {
+  font-size: 2.3rem;
+}
+
+.row > div span{
+  font-size: .8rem;
+}
+
+/* per js */
+
+.row > div i.animal {
+  color: #2046F6;
+}
+
+.row > div i.user {
+  color: #812B80;
+}
+
+.row > div i.vegetable {
+  color: #F5A540;
+}
+
+/* per js */
