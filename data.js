@@ -115,35 +115,75 @@ const icons = [
 
 const container = document.querySelector('.row');
 
+stampCards(icons);
 
-/*
-MILESTONE 1
-1 creare card
-2 aggiungere il contenuto alla card
-3 aggiungere card a container
-*/
-
-stampaCard(icons);
-
-function stampaCard(array) {
+function stampCards(array) {
+	
 	for(let i of array) {
 
- 		const {Name, prefix, family} = i;
+		const {Name, prefix, family, color} = i;
 
- 		const card = document.createElement('div');
-		
-		card.classList.add('col-2', 'card');
+		const card = document.createElement('div');
+	 
+	 card.classList.add('col-2', 'card');
 
- 		card.innerHTML = `<i class="${prefix}${family} ${prefix}${Name}"></i>
-		 									<span class="text-uppercase">${Name}</span>`;
- 												
+		card.innerHTML = `<i class="${prefix}${family} ${prefix}${Name} ${color}"></i>
+											<span class="text-uppercase">${Name}</span>`;
+												
 
- 		container.append(card);
+		container.append(card);
 
- 	}
+	}
 
 }
 
+const options = document.querySelectorAll('option');
+
+options.forEach((option) => { option.addEventListener('click', selector) });
+
+function selector(){
+	selectedOption(icons);
+}
+
+function selectedOption(array) {
+
+	const cardType = document.querySelector('select').value;
+
+	container.innerHTML = '';
+
+	if(cardType === 'all') {
+
+		stampCards(icons);
+
+	}
+
+	for(let i of array) {
+
+		const {type} = i;
+
+		if(type == cardType) {
+			stampSelectedCards(array, i);
+		}
+	}
+	
+}
+
+
+function stampSelectedCards(array, index) {
+
+		const {Name, prefix, family, color} = index;
+
+		const card = document.createElement('div');
+	 
+	 	card.classList.add('col-2', 'card');
+
+		card.innerHTML = `<i class="${prefix}${family} ${prefix}${Name} ${color}"></i>
+											<span class="text-uppercase">${Name}</span>`;
+												
+
+		container.append(card);
+
+}
 
 
 /*
