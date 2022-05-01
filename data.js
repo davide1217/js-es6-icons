@@ -1,114 +1,154 @@
 const icons = [
 	{
-		name: 'cat',
+		Name: 'cat',
 		prefix: 'fa-',
 		type: 'animal',
 		family: 'solid',
-		color: 'orange'
+		color: 'blu'
 	},
 	{
-		name: 'crow',
+		Name: 'crow',
 		prefix: 'fa-',
 		type: 'animal',
 		family: 'solid',
-		color: 'orange'
+		color: 'blu'
 	},
 	{
-		name: 'dog',
+		Name: 'dog',
 		prefix: 'fa-',
 		type: 'animal',
 		family: 'solid',
-		color: 'orange'
+		color: 'blu'
 	},
 	{
-		name: 'dove',
+		Name: 'dove',
 		prefix: 'fa-',
 		type: 'animal',
 		family: 'solid',
-		color: 'orange'
+		color: 'blu'
 	},
 	{
-		name: 'dragon',
+		Name: 'dragon',
 		prefix: 'fa-',
 		type: 'animal',
 		family: 'solid',
-		color: 'orange'
+		color: 'blu'
 	},
 	{
-		name: 'horse',
+		Name: 'horse',
 		prefix: 'fa-',
 		type: 'animal',
 		family: 'solid',
-		color: 'orange'
+		color: 'blu'
 	},
 	{
-		name: 'hippo',
+		Name: 'hippo',
 		prefix: 'fa-',
 		type: 'animal',
 		family: 'solid',
-		color: 'orange'
+		color: 'blu'
 	},
 	{
-		name: 'fish',
+		Name: 'fish',
 		prefix: 'fa-',
 		type: 'animal',
 		family: 'solid',
-		color: 'orange'
+		color: 'blu'
 	},
 	{
-		name: 'carrot',
+		Name: 'carrot',
 		prefix: 'fa-',
 		type: 'vegetable',
 		family: 'solid',
-		color: 'green'
+		color: 'orange'
 	},
 	{
-		name: 'apple-alt',
+		Name: 'apple-alt',
 		prefix: 'fa-',
 		type: 'vegetable',
 		family: 'solid',
-		color: 'green'
+		color: 'orange'
 	},
 	{
-		name: 'lemon',
+		Name: 'lemon',
 		prefix: 'fa-',
 		type: 'vegetable',
 		family: 'solid',
-		color: 'green'
+		color: 'orange'
 	},
 	{
-		name: 'pepper-hot',
+		Name: 'pepper-hot',
 		prefix: 'fa-',
 		type: 'vegetable',
 		family: 'solid',
-		color: 'green'
+		color: 'orange'
 	},
 	{
-		name: 'user-astronaut',
+		Name: 'user-astronaut',
 		prefix: 'fa-',
 		type: 'user',
 		family: 'solid',
-		color: 'blue'
+		color: 'purple'
 	},
 	{
-		name: 'user-graduate',
+		Name: 'user-graduate',
 		prefix: 'fa-',
 		type: 'user',
 		family: 'solid',
-		color: 'blue'
+		color: 'purple'
 	},
 	{
-		name: 'user-ninja',
+		Name: 'user-ninja',
 		prefix: 'fa-',
 		type: 'user',
 		family: 'solid',
-		color: 'blue'
+		color: 'purple'
 	},
 	{
-		name: 'user-secret',
+		Name: 'user-secret',
 		prefix: 'fa-',
 		type: 'user',
 		family: 'solid',
-		color: 'blue'
+		color: 'purple'
 	}
 ];
+
+const container = document.querySelector('.row');
+
+
+/*
+MILESTONE 1
+1 creare card
+2 aggiungere il contenuto alla card
+3 aggiungere card a container
+*/
+
+stampaCard(icons);
+
+function stampaCard(array) {
+	for(let i of array) {
+
+ 		const {Name, prefix, family} = i;
+
+ 		const card = document.createElement('div');
+		
+		card.classList.add('col-2', 'card');
+
+ 		card.innerHTML = `<i class="${prefix}${family} ${prefix}${Name}"></i>
+		 									<span class="text-uppercase">${Name}</span>`;
+ 												
+
+ 		container.append(card);
+
+ 	}
+
+}
+
+
+
+/*
+<div class="col-2 card">
+  <i class="fa-solid fa-carrot"></i>
+  <span class="text-uppercase">carrot</span>
+</div>
+*/

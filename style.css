@@ -31,7 +31,7 @@ main {
   min-height: calc(100vh - 140px);
 }
 
-.row > div {
+.row > .card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,25 +45,29 @@ main {
   border-radius: 10px;
 }
 
-.row > div i {
+.row > .card:hover {
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.row > .card i {
   font-size: 2.3rem;
 }
 
-.row > div span{
+.row > .card span{
   font-size: .8rem;
 }
 
 /* per js */
 
-.row > div i.animal {
+.row > .card i.blu {
   color: #2046F6;
 }
 
-.row > div i.user {
+.row > .card i.purple {
   color: #812B80;
 }
 
-.row > div i.vegetable {
+.row > .card i.orange {
   color: #F5A540;
 }
 
