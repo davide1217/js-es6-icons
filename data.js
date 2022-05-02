@@ -137,9 +137,10 @@ function stampCards(array) {
 
 }
 
-const options = document.querySelectorAll('option');
+const select = document.querySelector('select');
 
-options.forEach((option) => { option.addEventListener('click', selector) });
+select.addEventListener('change', selector);
+
 
 function selector(){
 	selectedOption(icons);
@@ -147,7 +148,7 @@ function selector(){
 
 function selectedOption(array) {
 
-	const cardType = document.querySelector('select').value;
+	const cardType = select.value;
 
 	container.innerHTML = '';
 
